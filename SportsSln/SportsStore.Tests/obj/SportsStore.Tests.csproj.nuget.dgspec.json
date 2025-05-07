@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj": {}
+    "D:\\Github\\SportsStore\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj": {}
   },
   "projects": {
-    "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj": {
+    "D:\\Github\\SportsStore\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
+        "projectUniqueName": "D:\\Github\\SportsStore\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
         "projectName": "SportsStore.Tests",
-        "projectPath": "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
+        "projectPath": "D:\\Github\\SportsStore\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
         "packagesPath": "C:\\Users\\Kevin\\.nuget\\packages\\",
-        "outputPath": "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore.Tests\\obj\\",
+        "outputPath": "D:\\Github\\SportsStore\\SportsSln\\SportsStore.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj": {
-                "projectPath": "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj"
+              "D:\\Github\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj": {
+                "projectPath": "D:\\Github\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj"
               }
             }
           }
@@ -96,14 +96,14 @@
         }
       }
     },
-    "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj": {
+    "D:\\Github\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj",
+        "projectUniqueName": "D:\\Github\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj",
         "projectName": "SportsStore",
-        "projectPath": "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj",
+        "projectPath": "D:\\Github\\SportsStore\\SportsSln\\SportsStore\\SportsStore.csproj",
         "packagesPath": "C:\\Users\\Kevin\\.nuget\\packages\\",
-        "outputPath": "D:\\Int_Prog\\SportsStore\\SportsSln\\SportsStore\\obj\\",
+        "outputPath": "D:\\Github\\SportsStore\\SportsSln\\SportsStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -21,7 +21,6 @@ namespace SportsStore.Pages
         public void OnGet(string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
-            Cart = HttpContext.Session.GetJson<Cart>("Cart") ?? new Cart();
         }
 
         public IActionResult OnPost(long productId, string returnUrl)
@@ -30,24 +29,31 @@ namespace SportsStore.Pages
                 .FirstOrDefault(p => p.ProductID == productId);
             if (product != null)
             {
-                //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
                 Cart.AddItem(product, 1);
-                //HttpContext.Session.SetJson("cart", Cart);
             }
             return RedirectToPage(new { returnUrl = returnUrl });
         }
-
-        public IActionResult OnPostRemove(long productId, string returnUrl)
+        public IActionResult OnGetRemove(long productId, string returnUrl)
         {
-            Console.WriteLine($"Remove handler hit: {productId} | {returnUrl}");
-
-            var line = Cart.Lines.FirstOrDefault(l => l.Product.ProductID == productId);
+            var line = Cart.Lines.FirstOrDefault(cl => cl.Product.ProductID == productId);
             if (line != null)
             {
-                Cart.RemoveLine(line.Product);
-            }
+                if (line.Quantity > 1)
+                {
+                    line.Quantity--;
+                }
+                else
+                {
+                    Cart.RemoveLine(line.Product);
+                }
 
+                if (Cart is SessionCart sessionCart)
+                {
+                    sessionCart.Session?.SetJson("Cart", sessionCart);
+                }
+            }
             return RedirectToPage(new { returnUrl });
         }
+
     }
 }
