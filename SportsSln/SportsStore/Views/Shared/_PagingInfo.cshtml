@@ -1,0 +1,20 @@
+﻿@model (SportsStore.Models.ViewModels.PagingInfo PagingInfo, string? CurrentCategory)
+
+@if (Model.PagingInfo.TotalPages > 1)
+{
+    <nav>
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= Model.PagingInfo.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PagingInfo.CurrentPage ? "active" : "")">
+                    <a class="page-link"
+                       asp-action="Index"
+                       asp-route-productPage="@i"
+                       asp-route-category="@Model.CurrentCategory">
+                        @i
+                    </a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

@@ -1,0 +1,54 @@
+﻿@model ProductsListViewModel
+
+<style>
+    /* Style all pagination buttons */
+    .btn-group .btn {
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        background-color: white;
+        color: #555;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+        /* Hover effect */
+        .btn-group .btn:hover {
+            background-color: #ffe5e5; /* Peach/pink */
+            color: #000;
+            transform: scale(1.05); /* Slight zoom */
+        }
+
+    /* Selected (active) button */
+    .btn-group .btn-primary {
+        background-color: lightcoral !important;
+        color: white;
+        border-color: red;
+        font-weight: bolder;
+    }
+
+    /* Optional: Add an arrow icon using Font Awesome */
+    .btn-group .btn::before {
+        content: "\f0da"; /* Font Awesome right arrow */
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 0.75rem;
+    }
+
+</style>
+
+<div page-model="@Model.PagingInfo" page-action="Index"
+     page-classes-enabled="true"
+     page-class="btn"
+     page-class-normal="btn-outline-secondary"
+     page-class-selected="btn-primary"
+     page-url-category="@Model.CurrentCategory"
+     class="btn-group gap-1 pull-right m-1">
+</div>
+@foreach (var p in Model.Products ?? Enumerable.Empty<Product>())
+{
+    <partial name="ProductSummary" model="p" />
+}

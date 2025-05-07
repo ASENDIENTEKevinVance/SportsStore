@@ -1,0 +1,70 @@
+﻿@using SportsStore.Infrastructure
+@model Product
+
+<style>
+    .product-card {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 2px 2px 6px rgba(200, 0, 0, 0.1);
+        transition: transform 0.2s ease;
+    }
+
+        .product-card:hover {
+            transform: scale(1.02);
+        }
+
+    .product-card-header {
+        background-color: #fff5f5;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #ddd;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .product-price {
+        float: right;
+        background-color: #dc143c; /* Scarlet Red */
+        color: #fff;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        box-shadow: 0 0 5px rgba(220, 20, 60, 0.4);
+    }
+
+    .add-cart-btn {
+        float: right;
+        margin-top: 8px;
+        background-color: #dc143c;
+        color: white;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .add-cart-btn:hover {
+            background-color: #b01036; /* Darker scarlet */
+            transform: scale(1.05);
+        }
+</style>
+
+<div class="card product-card m-1 p-1">
+    <div class="product-card-header">
+        <h4>
+            @Model.Name
+            <span class="product-price">
+                <small>@Model.Price.ToString("c")</small>
+            </span>
+        </h4>
+    </div>
+
+    <form id="@Model.ProductID" asp-page="/Cart" method="post">
+        <input type="hidden" asp-for="ProductID" />
+        <input type="hidden" name="returnUrl"
+               value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+        <span class="card-text p-1">
+            @Model.Description
+            <button type="submit" class="btn btn-sm add-cart-btn">
+                <i class="fas fa-heart-circle-plus"></i> Add to Cart
+            </button>
+        </span>
+    </form>
+</div>
